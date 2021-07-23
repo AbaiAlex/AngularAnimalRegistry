@@ -1,0 +1,86 @@
+<div class="p-grid">
+  <span class="p-col-8">
+    <h2>All puppies</h2>
+  </span>
+  <span class="p-buttonset p-col-4">
+    <p-button label="Info" icon="pi pi-info-circle"  [disabled]="resetChanges" styleClass="p-button-info" badge='{{changesCounterObservable | async}}' badgeClass="p-badge-danger" (click)="showInfo()" ></p-button>
+    <button pButton pRipple icon="pi pi-refresh" [loading]="resetChanges" (click)="resetCounter()"></button>
+  </span>
+</div>
+<!--div class="dogs-menu">
+  <a *ngFor="let dog of dogs"
+     routerLink="/detail/{{dog.id}}">
+    {{dog.name}}
+  </a>
+</div-->
+<div class="p-grid p-card-body">
+
+      <div class="p-col-8 p-card">
+        <div class="p-col">
+          <app-dogs *ngIf="createNewDog" (onClose)="closeCreateWindow($event)" ></app-dogs>
+        </div>
+      <!--table id="dog-table">
+        <thead>
+        <tr>
+          <th>#ID</th>
+          <th>Name</th>
+          <th>Gender</th>
+          <th>Type</th>
+          <th>Date of birth</th>
+          <th>Purebred</th>
+          <th style="text-align:center">Add new <button (click)="wantToCreateDog()">+</button></th>
+          <th style="text-align:center">Refresh <button (click)="refreshData()" ><i class="fa fa-refresh"></i></button></th>
+        </tr>
+        </thead>
+        <tr *ngFor="let dog of dogs" >
+          <td>{{dog.id}}</td>
+          <td>{{dog.name}}</td>
+          <td *ngIf="dog.gender; else notKnown">{{dog.gender}}</td>
+          <td *ngIf="dog.type; else notKnown">{{dog.type}}</td>
+          <td *ngIf="dog.dateOfBirth; else notKnown">{{dog.dateOfBirth}}</td>
+          <td *ngIf="dog.purebred === true; else notPurebred" > Yes </td>
+          <td style="text-align:center"> <button (click)="showDog(dog.id)">Edit</button></td>
+          <td style="text-align:center"><button class="delete" title="delete dog"
+                      (click)="delete(dog)">Delete</button></td>
+        </tr>
+      </table-->
+        <div class="p-card p-col">
+        <p-table [value]="dogs" styleClass="p-datatable-striped">
+          <ng-template pTemplate="header">
+            <tr>
+              <th>#ID</th>
+              <th>Name</th>
+              <th>Gender</th>
+              <th>Type</th>
+              <th>Date of birth</th>
+              <th>Purebred</th>
+              <th><button pButton label="Add new" icon="pi pi-plus" (click)="closeCreateWindow(false)"></button></th>
+              <th><button pButton label="Refresh " icon="pi pi-refresh" [loading]="loading" (click)="refreshData()"></button></th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-dog>
+            <tr>
+              <td>{{dog.id}}</td>
+              <td>{{dog.name}}</td>
+              <td *ngIf="dog.gender; else notKnown">{{dog.gender}}</td>
+              <td *ngIf="dog.type; else notKnown">{{dog.type}}</td>
+              <td *ngIf="dog.dateOfBirth; else notKnown">{{dog.dateOfBirth|date: 'yyyy-MM-dd'}}</td>
+              <td *ngIf="dog.purebred === true; else notPurebred" > Yes </td>
+              <td style="text-align:center"> <button pButton label="Edit" icon="pi pi-pencil" (click)="showDog(dog.id)"></button></td>
+              <td style="text-align:center"><button pButton label="Delete" icon="pi pi-times" class="delete" title="delete dog"
+                                                    (click)="delete(dog)"></button></td>
+            </tr>
+          </ng-template>
+        </p-table>
+        </div>
+      </div>
+    <div class="p-col-4">
+      <app-dog-detail *ngIf="selectedId" [selectedId]="selectedId" (selectedDogLoadedEmitter)="saveId($event)" (onClose)="closeDetailsWindow($event)" ></app-dog-detail>
+    </div>
+
+</div>
+
+
+
+<ng-template #notKnown><td>Not known</td></ng-template>
+<ng-template #notPurebred><td>No </td></ng-template>

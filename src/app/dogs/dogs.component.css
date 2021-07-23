@@ -1,0 +1,17 @@
+label {
+  color: #435960;
+  font-weight: bold;
+}
+input {
+  font-size: 1em;
+  padding: .5rem;
+}
+button {
+  margin-top: 10px;
+
+  padding: 5px;
+  border-radius: 10px;
+
+}
+
+

@@ -1,0 +1,20 @@
+label {
+  color: #435960;
+  font-weight: bold;
+}
+input {
+  font-size: 1em;
+  padding: .5rem;
+}
+span{
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+button {
+  margin-top: 20px;
+  padding: 5px;
+  border-radius: 10px;
+}
+i{
+  padding-left: 6px;
+}

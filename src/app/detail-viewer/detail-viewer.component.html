@@ -1,0 +1,21 @@
+<div *ngIf="form" class="p-card-body" >
+    <ng-container  [ngTemplateOutlet]="headTemplateRef" [ngTemplateOutletContext]="{}"></ng-container>
+    <ng-container *ngIf="bodyTemplateRef else defaultDetail" [ngTemplateOutlet]="bodyTemplateRef" [ngTemplateOutletContext]="{form: form, mode: mode}"></ng-container>
+    <ng-container [ngTemplateOutlet]="footerTemplateRef" [ngTemplateOutletContext]="{}"></ng-container>
+  <ng-template #defaultDetail>
+    <div [formGroup]="form" class="p-grid p-fluid p-card">
+      <ng-container *ngFor="let control of formControls()">
+        <span class="p-col-12 p-float-label p-input-icon-left">
+             <i class="pi pi-question-circle"></i>
+             <input id="dog-name" [formControl]="control" pInputText/>
+          <label for="dog-name">Unknown field </label>
+        </span>
+      </ng-container>
+      <span class="p-col-10 p-float-label p-fluid p-input-icon-left">
+      <i class="pi pi-plus-circle "></i>
+      <input id="new-toy" pInputText (change)="newToy(NewToy.value); NewToy.value=''" #NewToy />
+      <label for="new-toy">New Toy: </label>
+    </span>
+    </div>
+  </ng-template>
+</div>

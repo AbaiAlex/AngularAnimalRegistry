@@ -1,0 +1,14 @@
+<div class="p-grid">
+  <span class="p-col-12">
+<h2>Add a new dog</h2>
+</span>
+
+  <div class="p-col-6 p-float-label p-fluid">
+    <input id="new-dog" type="text" pInputText #dogName >
+    <label for="new-dog">Dog name</label>
+  </div>
+  <span class="p-buttonset p-col">
+    <button pButton pRipple label="Add" icon="pi pi-check" (click)="add(dogName.value); dogName.value=''"></button>
+    <button pButton pRipple label="Cancel" icon="pi pi-times" (click)="closeCreate()"></button>
+  </span>
+</div>
