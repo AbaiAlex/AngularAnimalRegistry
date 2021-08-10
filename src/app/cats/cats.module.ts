@@ -13,21 +13,31 @@ import {catsFeatureName, catsReducer} from './store/cats.reducers';
 import {CatsEffects} from './store/cats.effects';
 import {CatsFacade} from './store/cats.facade';
 import {CatsRepository} from './store/cats.repository';
+import {ButtonModule} from 'primeng/button';
+import {AppModule} from '../app.module';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {InputTextModule} from 'primeng/inputtext';
 
 
 @NgModule({
   declarations: [
     CatListComponent,
     CatEditedDataComponent,
-    CatMenuComponent
+    CatMenuComponent,
+
   ],
   imports: [
     CommonModule,
     CatsRoutingModule,
     TableModule,
+    InputTextModule,
     RouterModule,
+    ButtonModule,
+    FormsModule,
+    TableModule,
+    ReactiveFormsModule,
     StoreModule.forFeature(catsFeatureName, catsReducer),
-    EffectsModule.forFeature([CatsEffects])
+    EffectsModule.forFeature([CatsEffects]),
   ],
   providers: [
     CatsEffects, CatsFacade, CatsRepository

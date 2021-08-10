@@ -6,16 +6,20 @@ import {selectChangesCounter} from '../../store/app.selectors';
 import {CatListVO, CatVO} from './cats.interfaces';
 import {CatsState} from './cats.reducers';
 import {catsSelector} from './cats.selectors';
-import {loadListAction} from './cats.actions';
+import {loadDataAction, loadListAction} from './cats.actions';
 
 @Injectable()
 export class CatsFacade {
   public listData: Observable<CatListVO[]>  = this.store.select(catsSelector.listData);
-  public editedData: Observable<CatVO>  = this.store.select(catsSelector.editedData);
+  public editData: Observable<CatVO>  = this.store.select(catsSelector.editedData);
   constructor(private store: Store<CatsState>) {
   }
 
   public loadList(): void{
     this.store.dispatch(loadListAction());
   }
+  public loadData(id: number): void{
+    this.store.dispatch(loadDataAction({id}));
+  }
+
 }

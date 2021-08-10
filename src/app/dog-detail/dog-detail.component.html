@@ -68,7 +68,7 @@
   </div>
 
 </div-->
-<app-detail-viewer [form]="form" [mode]="'detail'">
+<app-detail-viewer [form]="form" [mode]="'detail'" *ngIf="appFacade.selectEditedDogObservable|async">
   <ng-template pTemplate="header">
     <div calss="p-card">
           <h2 >{{form.controls.name.value | uppercase}} details</h2>

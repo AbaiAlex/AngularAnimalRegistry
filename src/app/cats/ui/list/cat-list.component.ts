@@ -8,14 +8,19 @@ import {CatsFacade} from '../../store/cats.facade';
   styleUrls: ['./cat-list.component.css']
 })
 export class CatListComponent implements OnInit {
-listData = this.catsFacade.listData;
+  listData = this.catsFacade.listData;
+  selectedId: number;
   constructor(private router: Router, private catsFacade: CatsFacade) { }
 
   ngOnInit(): void {
     this.catsFacade.loadList();
   }
 
-  editRow(item: any): void{
-    this.router.navigateByUrl('cats/editedData/' + item.id).then();
+  editRow(id: number): void{
+    this.selectedId = id;
+    // this.router.navigateByUrl('cats/editedData/' + id).then();
+    console.log(id);
   }
+
+
 }

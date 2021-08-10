@@ -1,1 +1,10 @@
-/* AppComponent's private CSS styles */
+.startStyle {
+  display: table;
+  margin-right: auto;
+  margin-left: auto;
+}
+.afterStartStyle {
+
+  margin-right: 0;
+  margin-left: 0;
+}

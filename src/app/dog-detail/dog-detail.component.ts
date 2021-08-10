@@ -18,6 +18,7 @@ export class DogDetailComponent implements OnInit , OnChanges, OnDestroy {
   public selectedId: number;
   @Output()
   public selectedDogLoadedEmitter = new EventEmitter<Dog>();
+  // tslint:disable-next-line:no-output-on-prefix
   @Output()
   onClose: EventEmitter<boolean> = new EventEmitter();
   form: FormGroup;
@@ -63,6 +64,7 @@ export class DogDetailComponent implements OnInit , OnChanges, OnDestroy {
   }
 
   getDog(): void {
+
     let id;
     if (this.selectedId) {
       id = this.selectedId;
@@ -71,6 +73,8 @@ export class DogDetailComponent implements OnInit , OnChanges, OnDestroy {
     }
     this.appFacade.loadDogByID(id);
     this.appFacade.selectEditedDogObservable.subscribe(dog => {
+      this.toyFormArray.clear();
+      this.form.reset();
       dog.toys?.forEach( value => {
         this.toyFormArray.push(this.getToysFormGroup(value));
       });

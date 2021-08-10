@@ -23,6 +23,9 @@ import {AppEffects} from './store/app.effects';
 import {AppFacade} from './store/app.facades';
 import {BadgeModule} from 'primeng/badge';
 import {ToastModule} from 'primeng/toast';
+import { HighlightDirective } from './directives/highlight.directive';
+import { TableDirective } from './directives/table.directive';
+
 
 
 
@@ -32,7 +35,9 @@ import {ToastModule} from 'primeng/toast';
     DogsComponent,
     DogDetailComponent,
     DashboardComponent,
-    DetailViewerComponent
+    DetailViewerComponent,
+    HighlightDirective,
+    TableDirective,
   ],
   imports: [
     BrowserModule,
@@ -54,6 +59,10 @@ import {ToastModule} from 'primeng/toast';
     EffectsModule.forRoot([AppEffects])
   ],
   providers: [AppFacade],
+  exports: [
+    DetailViewerComponent,
+    HighlightDirective
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Dog } from './dog';
-import {DatePipe, formatDate} from '@angular/common';
 
 @Injectable({
   providedIn: 'root',
 })
 export class InMemoryDataService implements InMemoryDbService {
-  createDb() {
+  // tslint:disable-next-line:typedef
+  createDb(){
     const dogs: Dog[] = [
+      // tslint:disable-next-line:max-line-length
       { id: 11, name: 'Kajla' , gender: 'female' , type: 'Terrier', dateOfBirth: '2020-1-12', purebred: true, toys: [{toy: 'Rubber bone'}, {toy: 'Rubber duck'}]},
       { id: 12, name: 'Blöki' , gender: 'male (neutered)' , type: 'Bulldog', dateOfBirth: '2020-02-01' , purebred: true} ,
       { id: 13, name: 'Cézár' , gender: 'male' , type: 'Malamute', dateOfBirth: '2019-06-22' , purebred: false},

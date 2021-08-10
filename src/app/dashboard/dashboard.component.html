@@ -75,6 +75,7 @@
         </div>
       </div>
     <div class="p-col-4">
+      <h3 appHighlight *ngIf="selectedId">!!! {{selectedId}}th dog is under editing !!! </h3>
       <app-dog-detail *ngIf="selectedId" [selectedId]="selectedId" (selectedDogLoadedEmitter)="saveId($event)" (onClose)="closeDetailsWindow($event)" ></app-dog-detail>
     </div>
 
