@@ -1,8 +1,6 @@
 import {Injectable} from '@angular/core';
-import {AppState} from '../../store/app.reducers';
 import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
-import {selectChangesCounter} from '../../store/app.selectors';
 import {CatListVO, CatVO} from './cats.interfaces';
 import {CatsState} from './cats.reducers';
 import {catsSelector} from './cats.selectors';

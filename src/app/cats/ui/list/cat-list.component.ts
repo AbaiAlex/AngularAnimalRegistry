@@ -22,5 +22,9 @@ export class CatListComponent implements OnInit {
     console.log(id);
   }
 
-
+  closeDetailsWindow($event): void {
+    if ($event) {
+      this.selectedId = 0;
+    }
+  }
 }

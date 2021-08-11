@@ -12,6 +12,7 @@ const routes: Routes = [
   // { path: 'detail/:id', component: DogDetailComponent },
   { path: 'dogs', component: DashboardComponent},
   { path: 'cats', loadChildren: () => import('./cats/cats.module').then(m => m.CatsModule) },
+  { path: 'fishs', loadChildren: () => import('./fishs/fishs.module').then(m => m.FishsModule) },
 ];
 
 @NgModule({

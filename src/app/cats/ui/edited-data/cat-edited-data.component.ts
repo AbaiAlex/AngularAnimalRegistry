@@ -17,6 +17,10 @@ export class CatEditedDataComponent implements OnInit, OnChanges{
   @Input()
   public selectedId: number;
 
+  // tslint:disable-next-line:no-output-on-prefix
+  @Output()
+  onClose: EventEmitter<boolean> = new EventEmitter();
+
   constructor( private catsFacade: CatsFacade) { }
 
   ngOnInit(): void {
@@ -39,5 +43,15 @@ export class CatEditedDataComponent implements OnInit, OnChanges{
 
   onSelect(cat): void {
     this.selectedCat = cat;
+  }
+
+  save(): void{
+      this.editData.subscribe(() => this.closeDetails());
+      /*this.dogService.updateDog(this.form.value as Dog)
+        .subscribe(() => this.closeDetails() );*/
+  }
+
+  closeDetails(): void{
+    this.onClose.emit(true);
   }
 }

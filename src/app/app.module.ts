@@ -25,6 +25,7 @@ import {BadgeModule} from 'primeng/badge';
 import {ToastModule} from 'primeng/toast';
 import { HighlightDirective } from './directives/highlight.directive';
 import { TableDirective } from './directives/table.directive';
+import {DirectivesModule} from './directives/directives.module';
 
 
 
@@ -36,11 +37,10 @@ import { TableDirective } from './directives/table.directive';
     DogDetailComponent,
     DashboardComponent,
     DetailViewerComponent,
-    HighlightDirective,
-    TableDirective,
   ],
   imports: [
     BrowserModule,
+    DirectivesModule,
     FormsModule,
     TableModule,
     ReactiveFormsModule,

@@ -3,33 +3,32 @@
 
 <div class="p-grid p-card">
   <h2>{{cat.name| uppercase}} Details</h2>
-  <span class="p-col-10 p-float-label p-fluid p-input-icon-left">
+  <span class="p-col-12 p-float-label p-fluid p-input-icon-left">
         <i class="pi pi-plus-circle "></i>
         <input id="cat-name" pInputText [(ngModel)]="cat.name" />
         <label for="cat-name">Name: </label>
       </span>
-  <span class="p-col-10 p-float-label p-fluid p-input-icon-left">
+  <span class="p-col-12 p-float-label p-fluid p-input-icon-left">
         <i class="pi pi-plus-circle "></i>
         <input id="cat-gender" pInputText [(ngModel)]="cat.gender" />
         <label for="cat-gender">Gender: </label>
       </span>
-  <span class="p-col-10 p-float-label p-fluid p-input-icon-left">
+  <span class="p-col-12 p-float-label p-fluid p-input-icon-left">
         <i class="pi pi-plus-circle "></i>
         <input id="cat-type" pInputText [(ngModel)]="cat.type" />
         <label for="cat-type">Type: </label>
       </span>
-  <span class="p-col-10 p-float-label p-fluid p-input-icon-left">
+  <span class="p-col-12 p-float-label p-fluid p-input-icon-left">
         <i class="pi pi-plus-circle "></i>
         <input id="cat-dob" pInputText [(ngModel)]="cat.dateOfBirth" />
         <label for="cat-dob">Date of Birth: </label>
       </span>
-</div>
-  <div class="p-grid p-card">
-      <!--span class="p-buttonset p-col-6">
+      <span class="p-buttonset p-col-12">
         <button pButton pRipple label="Save" icon="pi pi-check" (click)="save()"></button>
         <button pButton pRipple label="Cancel" icon="pi pi-times" (click)="closeDetails()"></button>
-      </span-->
-  </div>
+      </span>
+</div>
+
 </div>
 
 

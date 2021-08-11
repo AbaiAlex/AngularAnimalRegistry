@@ -28,6 +28,9 @@ changeStyle(position: string): void{
     else if (animal === 'cats'){
       this.title = 'Cat Registry';
     }
+    else if (animal === 'fishs'){
+      this.title = 'Fish Registry';
+    }
     else{
       this.title = 'Animal Registry';
     }

@@ -17,6 +17,7 @@ import {ButtonModule} from 'primeng/button';
 import {AppModule} from '../app.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {InputTextModule} from 'primeng/inputtext';
+import {DirectivesModule} from '../directives/directives.module';
 
 
 @NgModule({
@@ -28,13 +29,13 @@ import {InputTextModule} from 'primeng/inputtext';
   ],
   imports: [
     CommonModule,
+    DirectivesModule,
     CatsRoutingModule,
     TableModule,
     InputTextModule,
     RouterModule,
     ButtonModule,
     FormsModule,
-    TableModule,
     ReactiveFormsModule,
     StoreModule.forFeature(catsFeatureName, catsReducer),
     EffectsModule.forFeature([CatsEffects]),

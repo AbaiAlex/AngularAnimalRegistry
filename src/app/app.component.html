@@ -3,9 +3,10 @@
     <h1>{{title}}</h1>
 
   <span class="p-buttonset">
-    <ng-template *ngIf="router.url === '/dashboard'; then changeStyle('center')"></ng-template>
+    <!--ng-template *ngIf="router.url === '/dashboard'; then changeStyle('center')"></ng-template-->
       <button pButton pRipple label="Dogs" (click)="changeTitle('dogs'); changeStyle('')" routerLink="/dogs" class="p-button-info"><img src="https://img.icons8.com/ios-filled/40/000000/dog.png"/></button>
       <button pButton pRipple label="Cats" (click)="changeTitle('cats'); changeStyle('')" routerLink="/cats" class="p-button-danger" ><img src="https://img.icons8.com/pastel-glyph/40/000000/cat--v1.png"/></button>
+       <button pButton pRipple label="Fishs" (click)="changeTitle('fishs'); changeStyle('')" routerLink="/fishs" class="p-button-help"><img src="https://img.icons8.com/ios-glyphs/40/000000/fish.png"/></button>
       <button pButton pRipple (click)="changeTitle('cancel'); closeRegistry(); changeStyle('center')" routerLink="/dashboard"><img src="https://img.icons8.com/dotty/40/000000/cancel.png"/></button>
   </span>
 </div>

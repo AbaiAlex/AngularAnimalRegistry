@@ -16,11 +16,9 @@ tableColumns: TableColumn[];
   constructor() { }
 
   ngOnInit(): void {
-    const columnHeader = this.tableColumns.map((tableColumn: TableColumn) => tableColumn.header);
-    this.displayedColumns = columnHeader;
-    const columnNames = this.tableColumns.map((tableColumn: TableColumn) => tableColumn.ColumnName);
-    this.displayedColumns = columnNames;
+
     }
+
 
 
   /*defaultColumns: TableColumn[] = [{
@@ -29,6 +27,6 @@ tableColumns: TableColumn[];
   }, {
     header: 'Name',
     ColumnName: 'name'
-  }];*/
-
+  }];
+*/
 }
