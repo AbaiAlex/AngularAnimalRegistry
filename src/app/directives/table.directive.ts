@@ -20,7 +20,6 @@ tableColumns: TableColumn[];
     }
 
 
-
   /*defaultColumns: TableColumn[] = [{
     header: 'ID',
     ColumnName: 'id'

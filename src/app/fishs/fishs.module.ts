@@ -13,6 +13,7 @@ import {ButtonModule} from 'primeng/button';
 import {InputTextModule} from 'primeng/inputtext';
 import {FishsRepository} from './store/fishs.repository';
 import {FishsFacade} from './store/fishs.facade';
+import {FormsModule} from '@angular/forms';
 
 
 
@@ -29,6 +30,7 @@ import {FishsFacade} from './store/fishs.facade';
     FishsRoutingModule,
     StoreModule.forFeature(fishsFeatureName, fishsReducer),
     EffectsModule.forFeature([FishsEffects]),
+    FormsModule,
   ],
   providers: [
     FishsEffects, FishsFacade, FishsRepository

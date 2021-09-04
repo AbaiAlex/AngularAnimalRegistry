@@ -21,7 +21,7 @@
     </p-table>
   </div>
   <div class="p-col-4">
-    <app-fish-edited-data></app-fish-edited-data>
+    <app-fish-edited-data *ngIf="selectedId" [selectedId]="selectedId" (onClose)="closeDetailsWindow($event)"></app-fish-edited-data>
   </div>
 </div>
 

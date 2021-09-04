@@ -21,8 +21,11 @@
     </p-table>
   </div>
   <div class="p-col-4">
+    <h3 appHighlight *ngIf="selectedId">!!! {{selectedId}}th cat is under editing !!!</h3>
     <app-cat-edited-data *ngIf="selectedId" [selectedId]="selectedId" (onClose)="closeDetailsWindow($event)"></app-cat-edited-data>
   </div>
 </div>
+<div>
 
+</div>
 

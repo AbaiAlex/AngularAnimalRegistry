@@ -1,7 +1,5 @@
-import {Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {CatsFacade} from '../../store/cats.facade';
-import {ActivatedRoute, Router} from '@angular/router';
-import {FormArray, FormBuilder, FormGroup} from '@angular/forms';
 import {CatVO} from '../../store/cats.interfaces';
 
 

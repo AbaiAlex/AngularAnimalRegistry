@@ -1,1 +1,32 @@
-<p>fish-edited-data works!</p>
+<div *ngIf="fish" class="p-grid p-card-body">
+
+
+  <div class="p-grid p-card">
+    <h2>{{fish.name| uppercase}} Details</h2>
+    <span class="p-col-12 p-float-label p-fluid p-input-icon-left">
+        <i class="pi pi-plus-circle "></i>
+        <input id="cat-name" pInputText [(ngModel)]="fish.name" />
+        <label for="cat-name">Name: </label>
+      </span>
+    <span class="p-col-12 p-float-label p-fluid p-input-icon-left">
+        <i class="pi pi-plus-circle "></i>
+        <input id="cat-gender" pInputText [(ngModel)]="fish.gender" />
+        <label for="cat-gender">Gender: </label>
+      </span>
+    <span class="p-col-12 p-float-label p-fluid p-input-icon-left">
+        <i class="pi pi-plus-circle "></i>
+        <input id="cat-type" pInputText [(ngModel)]="fish.type" />
+        <label for="cat-type">Type: </label>
+      </span>
+    <span class="p-col-12 p-float-label p-fluid p-input-icon-left">
+        <i class="pi pi-plus-circle "></i>
+        <input id="cat-dob" pInputText [(ngModel)]="fish.dateOfBirth" />
+        <label for="cat-dob">Date of Birth: </label>
+      </span>
+    <span class="p-buttonset p-col-12">
+        <button pButton pRipple label="Save" icon="pi pi-check" (click)="save()"></button>
+        <button pButton pRipple label="Cancel" icon="pi pi-times" (click)="closeDetails()"></button>
+      </span>
+  </div>
+
+</div>
